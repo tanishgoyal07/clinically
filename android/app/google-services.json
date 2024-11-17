@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "180197394119",
+    "project_id": "sciatica-4fb40",
+    "storage_bucket": "sciatica-4fb40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180197394119:android:c4bc6a73d74fafda51e0e2",
+        "android_client_info": {
+          "package_name": "com.example.scaitica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180197394119-ehj1qhvdapggoqjqfat1odeg009sjiec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.scaitica",
+            "certificate_hash": "b77c77771d0c8b852f9cbdef2081d0abee1b92d8"
+          }
+        },
+        {
+          "client_id": "180197394119-tc9g0pnpu6n0i6fi21481ujhgr4aod12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHbjhvAqe8XkcHLfmBmtjn-me7V79vvGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180197394119-tc9g0pnpu6n0i6fi21481ujhgr4aod12.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
