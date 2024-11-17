@@ -1,1 +1,6 @@
-Flask
+Flask==2.3.3
+Flask-Cors==4.0.0
+tensorflow==2.10.0
+numpy==1.23.4
+opencv-python==4.6.0.66
+tensorflow-keras==2.10.0

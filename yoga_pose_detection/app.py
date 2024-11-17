@@ -5,7 +5,6 @@ from pose_list import pose_classes
 app = Flask(__name__)
 
 @app.route('/predict_pose', methods=['POST'])
-
 def predict_pose():
     data = request.get_json()
     frame_data = data.get('frame')
