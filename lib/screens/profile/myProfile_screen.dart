@@ -123,8 +123,9 @@ class _MyRPofileScreenState extends State<MyRPofileScreen> {
                   subtitle: Text(
                     loggedInUser.email,
                     style: const TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
+                      overflow: TextOverflow.ellipsis
                     ),
                   ),
                   trailing: TextButton(

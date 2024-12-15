@@ -35,8 +35,8 @@ class _PoseDetectionScreenState extends State<PoseDetectionScreen> {
 
   Future<void> _initializeResources() async {
     await Future.wait([
-      _initializeCamera(),
       _initializeVideo(),
+      _initializeCamera(),
     ]);
     _startCountdown();
   }
@@ -63,7 +63,21 @@ class _PoseDetectionScreenState extends State<PoseDetectionScreen> {
   }
 
   Future<void> _initializeVideo() async {
-    videoController = VideoPlayerController.asset('assets/videos/utkasna.mp4')
+    videoController = widget.targetPose == "balasana"
+        ? VideoPlayerController.asset('assets/videos/balasana.mp4')
+        : widget.targetPose == "vriksasana"
+            ? VideoPlayerController.asset('assets/videos/vrikasana.mp4')
+            : widget.targetPose == "ardha chandrasana"
+                ? VideoPlayerController.asset(
+                    'assets/videos/ardha_chandrasana.mp4')
+                : widget.targetPose == "dhanurasana"
+                    ? VideoPlayerController.asset(
+                        'assets/videos/dhanurasana.mp4')
+                    : widget.targetPose == "parighasana"
+                        ? VideoPlayerController.asset(
+                            'assets/videos/parighasana.mp4')
+                        : VideoPlayerController.asset(
+                            'assets/videos/utkasna.mp4')
       ..setLooping(true)
       ..initialize().then((_) {
         setState(() {
@@ -103,7 +117,7 @@ class _PoseDetectionScreenState extends State<PoseDetectionScreen> {
           //   SoundPlayer.playSound('assets/sounds/alert.mp3');
           // }
         });
-        await Future.delayed(const Duration(milliseconds: 500));
+        await Future.delayed(const Duration(milliseconds: 1000));
       } catch (e) {
         print("Error during pose prediction: $e");
         break;
@@ -188,8 +202,7 @@ class _PoseDetectionScreenState extends State<PoseDetectionScreen> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(10),
-                backgroundColor:
-                    Colors.white,
+                backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18),
                 ),

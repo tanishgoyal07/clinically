@@ -7,10 +7,10 @@ from pose_list import pose_classes
 import os
 
 def predict_pose_service(frame_data, target_pose):
-    
     frame_data = base64.b64decode(frame_data)
     nparr = np.frombuffer(frame_data, np.uint8)
     frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     processed_image = preprocess_image(frame)
 
     predictions = model.predict(processed_image)

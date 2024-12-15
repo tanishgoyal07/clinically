@@ -90,8 +90,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/videos/
+    - assets/poses/
     - assets/person.png
     - assets/videos/utkasna.mp4
+    - assets/videos/balasana.mp4
+    - assets/videos/vrikasana.mp4
+    - assets/videos/ardha_chandrasana.mp4
+    - assets/videos/dhanurasana.mp4
+    - assets/videos/parighasana.mp4
     - assets/sounds/alert.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see

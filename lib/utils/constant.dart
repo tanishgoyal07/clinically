@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const String SERVER_URI = "http://192.168.1.11:5000/predict_pose";
+const String SERVER_URI = "http://192.168.17.153:5000/predict_pose";
 
 const String GEMINI_API_KEY = "AIzaSyCXtAFnWAbnP637BxJP7GQ1OlahDddDmtU";
 

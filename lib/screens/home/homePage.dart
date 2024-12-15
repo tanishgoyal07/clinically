@@ -108,47 +108,48 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 20.0),
-              child: Container(
-                height: 230,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.0),
-                  color: color12,
-                ),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      "BMI (Body Mass Index)",
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    result == "" ? const CircularProgressIndicator() : Text(
-                      result,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                     const SizedBox(
-                      height: 15,
-                    ),
-                    const GaugeIndicator(),
-                  ],
-                ),
-              ),
-            )
+            //BMI
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 20.0),
+            //   child: Container(
+            //     height: 230,
+            //     width: MediaQuery.of(context).size.width,
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(30.0),
+            //       color: color12,
+            //     ),
+            //     child: Column(
+            //       children: [
+            //         const SizedBox(
+            //           height: 20,
+            //         ),
+            //         const Text(
+            //           "BMI (Body Mass Index)",
+            //           style: TextStyle(
+            //             fontSize: 24,
+            //             color: Colors.white,
+            //             fontWeight: FontWeight.bold,
+            //           ),
+            //         ),
+            //         const SizedBox(
+            //           height: 10,
+            //         ),
+            //         result == "" ? const CircularProgressIndicator() : Text(
+            //           result,
+            //           style: const TextStyle(
+            //             fontSize: 20,
+            //             color: Colors.white,
+            //             fontWeight: FontWeight.w500,
+            //           ),
+            //         ),
+            //          const SizedBox(
+            //           height: 15,
+            //         ),
+            //         const GaugeIndicator(),
+            //       ],
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),

@@ -12,6 +12,7 @@ class PoseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -26,10 +27,10 @@ class PoseCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.asset(
-                  'assets/utkatasana.jpg',
+                  'assets/poses/${poseName}.jpg',
                   width: 150,
                   height: 150,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               ),
               const SizedBox(height: 10),
