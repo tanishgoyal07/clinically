@@ -95,6 +95,7 @@ class _MyRPofileScreenState extends State<MyRPofileScreen> {
         physics: const NeverScrollableScrollPhysics(),
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
+          // height: 1000,
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
@@ -165,6 +166,7 @@ class _MyRPofileScreenState extends State<MyRPofileScreen> {
                   ),
                 ],
               ),
+              const SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

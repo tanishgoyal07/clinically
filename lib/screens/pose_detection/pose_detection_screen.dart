@@ -168,6 +168,7 @@ class _PoseDetectionScreenState extends State<PoseDetectionScreen> {
             onPressed: () {
               Navigator.of(context).pop();
               Navigator.of(context).pop();
+              Navigator.of(context).pop();
             },
             child: const Text(
               'End',

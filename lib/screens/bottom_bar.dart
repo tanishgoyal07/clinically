@@ -6,6 +6,7 @@ import 'package:scaitica/screens/pose_detection/pose_selection_screen.dart';
 import 'package:scaitica/screens/community/community_screen.dart';
 import 'package:scaitica/screens/home/homePage.dart';
 import 'package:scaitica/screens/profile/myProfile_screen.dart';
+import 'package:scaitica/screens/report_analyzer/report_analyzer_screen.dart';
 import 'package:scaitica/utils/gauge_indicator.dart';
 
 class BottomBar extends StatefulWidget {
@@ -96,6 +97,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomePage(),
     PoseSelectionScreen(),
     const CommunityScreen(),
+    const ReportAnalyzer(),
     const MyRPofileScreen(),
   ];
 
@@ -133,6 +135,13 @@ class _BottomBarState extends State<BottomBar> {
                     color: Colors.black,
                   ),
                   label: 'Community',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.document_scanner,
+                    color: Colors.black,
+                  ),
+                  label: 'Report Analyzer',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(

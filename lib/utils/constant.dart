@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
-const String SERVER_URI = "http://192.168.17.153:5000/predict_pose";
+const String MAIN_URI = "http://192.168.1.49:5050";
 
-const String GEMINI_API_KEY = "";
+const String SERVER_URI = "$MAIN_URI/predict_pose";
+const String REPORT_ANALYZER_URI = "$MAIN_URI/analyze";
+const String REPORT_DOWNLOAD_URI = "$MAIN_URI/download/";
+const String VIDEO_ANALYZER_URI = "$MAIN_URI/video";
+
+
+const String GEMINI_API_KEY = "AIzaSyBNzcZVGnU7bNI-y0ilDU0Rw9WFVb9_Ylc";
+// const String GEMINI_API_KEY = "AIzaSyCXtAFnWAbnP637BxJP7GQ1OlahDddDmtU";
+// const String GEMINI_API_KEY = "AIzaSyACpYhb50hhs9YLamXKStSA_pTZuh756jQ";
 
 const Color color1 = Color(0xff2CA3FA);
 const Color color2 =  Color.fromARGB(255, 187, 159, 240);

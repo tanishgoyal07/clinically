@@ -17,7 +17,7 @@ class SquareBox extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: width,
-        height: 55,
+        height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
             20,

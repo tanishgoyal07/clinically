@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scaitica/screens/pose_detection/pose_detection_screen.dart';
+import 'package:scaitica/screens/pose_detection/workout_mode_screen.dart';
 import 'package:scaitica/utils/pose_list.dart';
 import 'package:scaitica/widgets/posecard.dart'; // Assuming poseNames are coming from here
 
@@ -88,7 +89,7 @@ class _PoseSelectionScreenState extends State<PoseSelectionScreen> {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => PoseDetectionScreen(
+                      builder: (context) => WorkoutModeScreen(
                         targetPose: pose,
                       ),
                     ),

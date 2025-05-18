@@ -5,7 +5,6 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:scaitica/utils/pickImage.dart';
 
 import '../../../utils/constant.dart';
 
@@ -18,7 +17,6 @@ class ChatBot extends StatefulWidget {
 
 class _ChatBotState extends State<ChatBot> {
   final Gemini gemini = Gemini.instance;
-
   List<ChatMessage> messages = [];
 
   ChatUser currentUser = ChatUser(id: "0", firstName: "User");
@@ -54,49 +52,39 @@ class _ChatBotState extends State<ChatBot> {
       inputOptions: InputOptions(trailing: [
         IconButton(
           onPressed: _sendMediaMessage,
-          icon: const Icon(
-            Icons.image,
-          ),
+          icon: const Icon(Icons.image),
         ),
       ]),
       currentUser: currentUser,
-      onSend: _sendMessage,
+      onSend: _sendTextMessage,
       messages: messages,
     );
   }
 
-  void _sendMessage(ChatMessage chatMessage) {
+  /// Extracts text response from Candidates
+  String _extractTextFromCandidates(Candidates candidates) {
+    if (candidates.content?.parts?.isEmpty ?? true) {
+      return "No response from Gemini.";
+    }
+
+    return candidates.content!.parts!
+        .map((part) => part.text ?? "")
+        .join("\n\n");
+  }
+
+  /// Handles text-only messages
+  void _sendTextMessage(ChatMessage chatMessage) {
     setState(() {
       messages = [chatMessage, ...messages];
     });
+
+    String question = chatMessage.text;
+
     try {
-      String question = chatMessage.text;
-      List<Uint8List>? images;
-      if (chatMessage.medias?.isNotEmpty ?? false) {
-        images = [
-          File(chatMessage.medias!.first.url).readAsBytesSync(),
-        ];
-      }
-      gemini
-          .streamGenerateContent(
-        question,
-        images: images,
-      )
-          .listen((event) {
-        ChatMessage? lastMessage = messages.firstOrNull;
-        if (lastMessage != null && lastMessage.user == geminiUser) {
-          lastMessage = messages.removeAt(0);
-          String response = event.content?.parts?.fold(
-                  "", (previous, current) => "$previous ${current.text}") ??
-              "";
-          lastMessage.text += response;
-          setState(() {
-            messages = [lastMessage!, ...messages];
-          });
-        } else {
-          String response = event.content?.parts?.fold(
-                  "", (previous, current) => "$previous ${current.text}") ??
-              "";
+      gemini.streamGenerateContent(question).listen((candidates) {
+        String response = _extractTextFromCandidates(candidates);
+
+        if (response.isNotEmpty) {
           ChatMessage message = ChatMessage(
             user: geminiUser,
             createdAt: DateTime.now(),
@@ -108,10 +96,11 @@ class _ChatBotState extends State<ChatBot> {
         }
       });
     } catch (e) {
-      print(e);
+      print("Error: $e");
     }
   }
 
+  /// Handles image-based messages
   void _sendMediaMessage() async {
     ImagePicker picker = ImagePicker();
     XFile? file = await picker.pickImage(source: ImageSource.gallery);
@@ -129,7 +118,30 @@ class _ChatBotState extends State<ChatBot> {
           )
         ],
       );
-      _sendMessage(chatMessage);
+
+      setState(() {
+        messages = [chatMessage, ...messages];
+      });
+
+      try {
+        Uint8List imageBytes = File(file.path).readAsBytesSync();
+        gemini.streamGenerateContent("Describe this image", images: [imageBytes]).listen((candidates) {
+          String response = _extractTextFromCandidates(candidates);
+
+          if (response.isNotEmpty) {
+            ChatMessage message = ChatMessage(
+              user: geminiUser,
+              createdAt: DateTime.now(),
+              text: response,
+            );
+            setState(() {
+              messages = [message, ...messages];
+            });
+          }
+        });
+      } catch (e) {
+        print("Error: $e");
+      }
     }
   }
 }
