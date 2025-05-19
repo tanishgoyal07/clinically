@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const String MAIN_URI = "http://192.168.1.49:5000";
+const String MAIN_URI = "http://192.168.1.49:5050";
 
 const String SERVER_URI = "$MAIN_URI/predict_pose";
 const String REPORT_ANALYZER_URI = "$MAIN_URI/analyze";
