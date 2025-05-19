@@ -2,7 +2,8 @@ Flask==2.3.3
 flask-cors==3.0.10
 Werkzeug==2.3.7
 opencv-python==4.9.0.80
-tensorflow==2.15.0
+tensorflow==2.11.0
+keras==2.11.0
 numpy==1.24.4
 pillow==9.5.0
 python-dotenv==1.0.1
