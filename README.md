@@ -12,6 +12,9 @@
 
 # Demo Video
 
-Link: https://drive.google.com/file/d/1rVzHX3Go_EHbSU7Jrk0EOpXiE5i3MB-e/view?usp=sharing
+https://github.com/user-attachments/assets/27d7b6b5-2d7c-4e71-a170-0e50eadd3d6a
+
+
+
 
 
