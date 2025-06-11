@@ -1,16 +1,8 @@
-# scaitica
+# Clinically
 
-A new Flutter project.
+#Mobile Application Screenshots
 
-## Getting Started
+![{E81B73BD-145D-412B-81CD-EFE89446E2C8}](https://github.com/user-attachments/assets/d3e260fd-0b10-45e0-bb12-d6297ffe1048)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
